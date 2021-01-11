@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 
-//once again I am one step ahead. 
+
   const Button = ({ onClick, click }) => <button onClick={onClick} >{click}</button>
 
   const Buttons = ({ setGood, good, setNeutral, neutral, setBad, bad }) => {
@@ -17,17 +17,14 @@ import ReactDOM from 'react-dom'
 const Statistic = ({ click, votes }) => <tr><td>{click}:</td><td>{votes}</td></tr>
 
 const Statistics = ({ good, neutral, bad, all, average, positive }) => { 
-  if(good === 0 && bad === 0 && neutral === 0) return (<div><p>beans</p></div>)
     return (
-        <div>
-          <table>    
+        <div>    
             <Statistic click="good" votes={good} />
             <Statistic click="neutral" votes={neutral} />
             <Statistic click="bad" votes={bad} />  
             <Statistic click ="all" votes = {all} />   
             <Statistic click = "average" votes = {average}/> 
-            <Statistic click = "positive" votes = {positive}/>
-          </table>
+            <Statistic click = "positive" votes = {positive}/>   
         </div>
     )
 }
